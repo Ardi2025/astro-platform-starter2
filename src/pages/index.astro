@@ -4,30 +4,74 @@ import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
 const explainer = `
-
 Empower local designers with the essential tools to achieve global excellence through the seamless integration of technology, genuine human connections, and unwavering authenticity.
 `;
 ---
 
 <Layout title="Welcome to Ardi">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Empowering local designers </h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-       <a
-  href="mailto:support@ardi.ae"
-  style="
-    display: inline-block;
-    background-color: #F56722;
-    color: #FFFFFF;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-  "
->
-  Contact Us
-</a>
+  <ContextAlert class="mb-8" />
 
-    </p>
+  <h1 class="mb-10">Empowering local designers</h1>
+  <Markdown content={explainer} class="mb-10 text-lg" />
+
+  <p class="mb-8">
+    <a
+      href="mailto:support@ardi.ae"
+      style="
+        display: inline-block;
+        background-color: #F56722;
+        color: #FFFFFF;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+      "
+    >
+      Contact Us
+    </a>
+  </p>
+
+  <!-- ↓↓↓ Netlify Contact Form ↓↓↓ -->
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    class="max-w-md mx-auto text-left space-y-4 mb-16"
+  >
+    <input type="hidden" name="form-name" value="contact" />
+
+    <label for="email" class="block font-medium">Your Email</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      required
+      style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;"
+    />
+
+    <label for="message" class="block font-medium">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      required
+      style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;"
+    ></textarea>
+
+    <button
+      type="submit"
+      style="
+        display:inline-block;
+        background-color:#F56722;
+        color:#FFFFFF;
+        padding:12px 24px;
+        border:none;
+        border-radius:8px;
+        font-weight:600;
+        cursor:pointer;
+      "
+    >
+      Send Message
+    </button>
+  </form>
 </Layout>
